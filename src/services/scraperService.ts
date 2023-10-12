@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer-core";
+import puppeteer from "puppeteer";
 import * as cheerio from "cheerio";
 import { timeout } from "../utils";
 import { NewProject } from "../types";
@@ -9,8 +9,18 @@ export async function scrapeProject(url: string): Promise<NewProject> {
   const SBR_WS_ENDPOINT = `wss://${username}:${password}@brd.superproxy.io:9222`;
 
   console.log("Connecting to Scraping Browser...");
-  const browser = await puppeteer.connect({
-    browserWSEndpoint: SBR_WS_ENDPOINT,
+  const browser = await puppeteer.launch({
+    // browserWSEndpoint: SBR_WS_ENDPOINT,
+    args: [
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--single-process",
+      "--no-zygote",
+    ],
+    executablePath:
+      process.env.NODE_ENV === "production"
+        ? process.env.PUPPETEER_EXECUTABLE_PATH
+        : puppeteer.executablePath(),
   });
 
   try {
