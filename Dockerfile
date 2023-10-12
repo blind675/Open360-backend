@@ -6,7 +6,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 WORKDIR /usr/src/app
 
 COPY package*.json ./
-RUN NODE_ENV=development npm i
+RUN npm ci
 COPY . .
 RUN tsc
 CMD [ "node", "." ]
