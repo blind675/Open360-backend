@@ -16,7 +16,7 @@ const scrape = asyncHandler(async (req, res, next) => {
     await connectToDatabase();
 
     console.log("Saving or updating project...");
-    const newOrUpdatedProject = await Project.findOneAndUpdate(
+    await Project.findOneAndUpdate(
       { url: scrapedProject.url },
       scrapedProject,
       {

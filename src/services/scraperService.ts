@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 import * as cheerio from "cheerio";
 import { timeout } from "../utils";
 import { NewProject } from "../types";
