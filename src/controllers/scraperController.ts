@@ -6,6 +6,9 @@ import { scrapeProject } from "../services/scraperService";
 const scrape = asyncHandler(async (req, res, next) => {
   try {
     const projectURL = req.body?.url;
+
+    console.log("Received URL: " + projectURL);
+
     if (!projectURL) {
       res.status(400).send("No project URL param provided");
     }
