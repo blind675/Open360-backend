@@ -1,4 +1,4 @@
-FROM ghcr.io/puppeteer/puppeteer:latest
+FROM zenika/alpine-chrome:with-node
 FROM node:latest as ts-compiler
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
@@ -6,7 +6,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY --chown=chrome package.json package-lock.json ./
 RUN npm install
-COPY . .
+COPY --chown=chrome . ./
 RUN npm run tsc
