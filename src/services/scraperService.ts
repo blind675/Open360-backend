@@ -23,6 +23,10 @@ export async function scrapeProject(url: string): Promise<NewProject> {
         : puppeteer.executablePath(),
   });
 
+  // const browser = await puppeteer.connect({
+  //   browserWSEndpoint: SBR_WS_ENDPOINT,
+  // });
+
   try {
     console.log("Connected! Navigating...");
     const page = await browser.newPage();
