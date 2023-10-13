@@ -5,7 +5,7 @@ import { connectToDatabase } from "./db/mongoose";
 
 function init() {
   const app = express();
-  const port = process.env.SERVER_PORT;
+  const port = process.env.PORT;
 
   app.use(express.json());
   app.use("/api/v1", router);
