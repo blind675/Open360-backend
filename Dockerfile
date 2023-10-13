@@ -9,5 +9,5 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN tsc
+RUN npm run tsc
 CMD [ "node", "." ]
