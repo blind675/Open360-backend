@@ -11,7 +11,6 @@ const scrape = asyncHandler(async (req, res, next) => {
 
     if (!projectURL) {
       res.status(400).send("No project URL param provided");
-
       return;
     }
 
