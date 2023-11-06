@@ -1,6 +1,6 @@
 import express from "express";
 import scraperRouter from "./scraperRouter";
-import emailController from "../../src/controllers/emailConstoller";
+import emailController from "../controllers/emailController";
 const router = express.Router();
 
 router.use("/scraper", scraperRouter);
