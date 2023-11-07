@@ -7,7 +7,7 @@ export type Project = {
   tagLine: string;
   backgroundImg: string;
   progress: string;
-  followersEmails?: String[];
+  followersEmails?: string[];
   lastUpdatedAt?: Date;
   createdAt: Date;
   updatedAt: Date;
@@ -21,5 +21,5 @@ export type NewProject = {
   tagLine: string;
   backgroundImg: string;
   progress: string;
-  followersEmails?: String[];
+  followersEmails?: string[];
 };
