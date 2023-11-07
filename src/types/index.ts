@@ -1,5 +1,5 @@
 export type Project = {
-  _id?: string;
+  _id: string;
   url: string;
   title: string;
   description: string;
@@ -7,6 +7,8 @@ export type Project = {
   tagLine: string;
   backgroundImg: string;
   progress: string;
+  followersEmails?: String[];
+  lastUpdatedAt?: Date;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -19,4 +21,5 @@ export type NewProject = {
   tagLine: string;
   backgroundImg: string;
   progress: string;
+  followersEmails?: String[];
 };

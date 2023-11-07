@@ -51,7 +51,7 @@ export async function scrapeProject(url: string): Promise<NewProject> {
       .trim()
       .match(/\d+/)?.[0];
 
-    const project = {
+    const project: NewProject = {
       url,
       title,
       iconImg,
@@ -59,6 +59,7 @@ export async function scrapeProject(url: string): Promise<NewProject> {
       description,
       backgroundImg,
       progress,
+      followersEmails: [],
     };
 
     console.log("Scraped!");
